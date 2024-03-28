@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  api_blue: &api
+    image: pxuanbach/simple-app
+    ports:
+      - '8000:8000'
+    restart: on-failure
+
+  api_green: 
+    <<: *api
+    ports:
+      - "8001:8000"
